@@ -1,0 +1,9 @@
+https://blog.zynji.my.id/posts/cara-install-dan-setting-ssh-untuk-github-di-linux-windows-dan-macos/
+https://blog.zynji.my.id/posts/cara-install-jdownloader2-di-portainer-dengan-mudah-dan-cepat/
+https://blog.zynji.my.id/posts/ubah-stb-jadi-server-printer-cups/
+https://blog.zynji.my.id/posts/cara-install-glances--set-auto-start-saat-booting-di-linux/
+https://blog.zynji.my.id/posts/menghapus-aplikasi-sistem-android-bloatware-dengan-adb/
+https://blog.zynji.my.id/posts/cara-mudah-setting-jadwal-reboot-otomatis-di-armbian-linux/
+https://blog.zynji.my.id/posts/menghemat-daya-server-dengan-powertop-dan-hdidle/
+https://blog.zynji.my.id/posts/tes-kecepatan-lan-menggunakan-iperf3-secara-optimal/
+https://blog.zynji.my.id/posts/mounting-drive-linux-manual-auto-mount-via-fstab-ext4-ntfs/
