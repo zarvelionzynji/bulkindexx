@@ -1,7 +1,3 @@
-README.md
-
----
-
 # Bulk URL Indexing Script
 
 This Python script submits URLs to Google Indexing API and IndexNow for faster indexing. It supports bulk submission from a file or a single URL. The script automatically installs or upgrades required libraries and provides clear logging with HTTP status explanations.
@@ -72,6 +68,11 @@ python bulkindexx.py
 * Make sure your environment can install Python packages if needed.
 * Google service account must have permission for the Indexing API.
 * IndexNow requires the API key file placed on your site at the specified location.
+
+## Learn More
+
+Read detailed tutorials and guides on my blog:
+* [Bulk Indexing with Google and IndexNow](https://blog.zynji.my.id/posts/bulkindexx-script-otomatisasi-submit-url-ke-google-indexing-api-dan-indexnow/)
 
 ## License
 
