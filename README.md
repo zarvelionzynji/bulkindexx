@@ -52,6 +52,12 @@ Submit only to IndexNow:
 python bulkindexx.py --url https://blog.zynji.my.id --only indexnow
 ```
 
+Blogger mode (Submit exclude keyLocation from IndexNow payload}
+
+```bash
+python bulkindexx.py --url urls.txt --blogger
+```
+
 Run without arguments to see usage instructions:
 
 ```bash
@@ -80,3 +86,12 @@ MIT License
 
 ---
 
+## Changelog
+
+### [v1.1.0] - 21/08/2025
+#### Added
+- Blogger mode parameter (`--blogger`)
+- Rate limiting delay between requests
+- Progress indicators
+
+---
