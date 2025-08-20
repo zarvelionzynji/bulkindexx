@@ -94,4 +94,7 @@ MIT License
 - Rate limiting delay between requests
 - Progress indicators
 
+#### Changed
+- Better module check and install
+
 ---
