@@ -70,14 +70,17 @@ def google_indexing_api(urls):
         log_result("Google", url, resp.status_code, resp.text)
 
 # Submit URLs to IndexNow
-def indexnow_api(urls):
+def indexnow_api(urls, blogger_mode=False):
     for url in urls:
         payload = {
             "host": url.split("/")[2],
             "key": INDEXNOW_API_KEY,
-            "keyLocation": f"https://{url.split('/')[2]}/{INDEXNOW_API_KEY}.txt",
             "urlList": [url]
         }
+        
+        if not blogger_mode:
+            payload["keyLocation"] = f"https://{url.split('/')[2]}/{INDEXNOW_API_KEY}.txt"
+            
         resp = requests.post(INDEXNOW_ENDPOINT, json=payload)
         log_result("IndexNow", url, resp.status_code, resp.text)
 
@@ -93,13 +96,15 @@ if __name__ == "__main__":
     if len(sys.argv) == 1:
         print("Usage:\n")
         print("  python bulkindexx.py --url urls.txt")
-        print("  python bulkindexx.py --url https://example.com --only google\n")
+        print("  python bulkindexx.py --url https://example.com --only google")
+        print("  python bulkindexx.py --url urls.txt --blogger\n")
         print("Use --help for more information.\n")
         sys.exit(0)
 
     parser = argparse.ArgumentParser(description="Bulk submit URLs to Google Indexing API and IndexNow")
     parser.add_argument("--url", required=True, help="Single URL or path to a file containing list of URLs")
     parser.add_argument("--only", choices=["google", "indexnow"], help="Send requests only to Google or IndexNow")
+    parser.add_argument("--blogger", action="store_true", help="Blogger mode: exclude keyLocation from IndexNow payload")
     args = parser.parse_args()
 
     if os.path.isfile(args.url):
@@ -116,11 +121,11 @@ if __name__ == "__main__":
         google_indexing_api(urls)
     elif args.only == "indexnow":
         print("Sending to IndexNow...")
-        indexnow_api(urls)
+        indexnow_api(urls, blogger_mode=args.blogger)
     else:
         print("Sending to Google Indexing API...")
         google_indexing_api(urls)
         print("\nSending to IndexNow...")
-        indexnow_api(urls)
+        indexnow_api(urls, blogger_mode=args.blogger)
 
     print(f"\nDone. Log saved to {LOG_FILE}")
